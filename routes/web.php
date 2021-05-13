@@ -35,28 +35,25 @@ echo "</pre>";
 Route::get('paises', function () {
 
     $paises = [
-"Colombia" => [
-        "capital" => "Bogotá",
-        "Moneda" => "Peso",
-        "poblacion" => 50.34
-], "Peru" => [
-        "capital" => "Lima",
-        "Moneda" => "Sol",
-        "poblacion" => 32.82
-], "Paraguay" => [
-        "capital" => "Asunción",
-        "Moneda" => "Guarani Paraguayo",
-        "poblacion" => 7.045
-]
-    ];
+    "Colombia" => [
+            "capital" => "Bogotá",
+            "Moneda" => "Peso",
+            "poblacion" => 50.34
+    ], "Peru" => [
+            "capital" => "Lima",
+            "Moneda" => "Sol",
+            "poblacion" => 32.82
+    ], "Paraguay" => [
+            "capital" => "Asunción",
+            "Moneda" => "Guarani Paraguayo",
+            "poblacion" => 7.045
+    ]
+        ];
 
-foreach ($paises as $nombrepais => $país){
-echo "<h1>$nombrepais</h1>";
-    echo "<pre>";
-    print_r($país ["capital"]);
-    echo "</pre>";
-echo "<hr />";
-}
+
+//invocar la vista
+//levando los datos a la vista
+return view("paises")->with("naciones" , $paises );
 
 
 
