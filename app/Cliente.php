@@ -11,4 +11,11 @@ class Cliente extends Model
     protected $primaryKey='CustomerId';
 
     public $timestamps= false;
+
+
+    public function facturas (){
+        //Utilizo el metodo eloquent: has many
+        return $this->hasMany('App\Factura' , 'CustomerId');
+    }
 }
+
